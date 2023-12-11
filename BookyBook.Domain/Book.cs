@@ -4,9 +4,9 @@ public class Book
     public string? Title { get; set; }
     public string? Author { get; set; }
     public string? Genre { get; set; }
-    public int Year { get; set; }
+    public int? Year { get; set; }
     public int Copies { get; set; } = 0;
-    public decimal Score { get; set; }
+    public decimal? Score { get; set; }
     private int IdNumber { get; set; }
     private static int IdNumberSeed = 10000;
 
