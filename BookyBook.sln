@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookyBook", "BookyBook.csproj", "{355A177B-35A0-4A37-AABC-62AA2791BD5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookyBook.Domain", "BookyBook.Domain\BookyBook.Domain.csproj", "{DC49B01A-D2B3-4990-922E-0A6F6E6EF4C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{355A177B-35A0-4A37-AABC-62AA2791BD5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{355A177B-35A0-4A37-AABC-62AA2791BD5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{355A177B-35A0-4A37-AABC-62AA2791BD5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{355A177B-35A0-4A37-AABC-62AA2791BD5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC49B01A-D2B3-4990-922E-0A6F6E6EF4C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC49B01A-D2B3-4990-922E-0A6F6E6EF4C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC49B01A-D2B3-4990-922E-0A6F6E6EF4C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC49B01A-D2B3-4990-922E-0A6F6E6EF4C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7FFBA054-DC30-463F-A5AC-63B75E0A9861}
+		SolutionGuid = {ADBD27B3-18FF-46EC-89E1-C8E15822EBA2}
 	EndGlobalSection
 EndGlobal
