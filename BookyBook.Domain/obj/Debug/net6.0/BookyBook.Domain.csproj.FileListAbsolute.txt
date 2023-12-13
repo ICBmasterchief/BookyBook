@@ -1,0 +1,12 @@
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Domain\bin\Debug\net6.0\BookyBook.Domain.deps.json
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Domain\bin\Debug\net6.0\BookyBook.Domain.dll
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Domain\bin\Debug\net6.0\BookyBook.Domain.pdb
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Domain\obj\Debug\net6.0\BookyBook.Domain.csproj.AssemblyReference.cache
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Domain\obj\Debug\net6.0\BookyBook.Domain.GeneratedMSBuildEditorConfig.editorconfig
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Domain\obj\Debug\net6.0\BookyBook.Domain.AssemblyInfoInputs.cache
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Domain\obj\Debug\net6.0\BookyBook.Domain.AssemblyInfo.cs
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Domain\obj\Debug\net6.0\BookyBook.Domain.csproj.CoreCompileInputs.cache
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Domain\obj\Debug\net6.0\BookyBook.Domain.dll
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Domain\obj\Debug\net6.0\refint\BookyBook.Domain.dll
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Domain\obj\Debug\net6.0\BookyBook.Domain.pdb
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Domain\obj\Debug\net6.0\ref\BookyBook.Domain.dll
