@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "iYi7HXd8C19nGvTT53iqNRRL/FkQjjyMNXeFUId34xJ8/Jd7ZIT7Oja+/qfev5T0riC8VliLkHsSgwGGEKv8sw==",
+  "dgSpecHash": "EW78PazGahY9COrd9AsdbIcuNA3Zxb4/9OoQPsK8Lf4te/hx8pXBEp5zIm59rw3eD0+Aw4+zYWgd6ShS872eJg==",
   "success": true,
   "projectFilePath": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Presentation\\BookBook.Presentation.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ignac\\.nuget\\packages\\spectre.console\\0.48.0\\spectre.console.0.48.0.nupkg.sha512",
+    "C:\\Users\\ignac\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512"
+  ],
   "logs": []
 }
