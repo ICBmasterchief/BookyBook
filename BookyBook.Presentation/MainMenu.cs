@@ -1,15 +1,26 @@
+using System.Dynamic;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using BookyBook.Domain;
 using Spectre.Console;
+using System.Text.Json;
 
 namespace BookyBook.Presentation;
 public class MainMenu
 {
     public bool Exit = false;
+    private User ActualUser = new User();
+    public List<User> UsersList = new List<User>();
     public void ShowMainMenu()
     {
         AnsiConsole.Clear();
+        AnsiConsole.Write(
+    new FigletText("BookyBook")
+        .LeftJustified()
+        .Color(Color.Red));
+        AnsiConsole.MarkupLine("[red] _____________________________________________________________________[/]");
+        AnsiConsole.MarkupLine("[red] _____________________________________________________________________[/]");
+        AnsiConsole.MarkupLine("");
         var MainPrompt = new SelectionPrompt<string>()
                 .Title("Main Menu")
                 .PageSize(10)
@@ -47,8 +58,15 @@ public class MainMenu
                 break;
             case "Sign Up":
                 string name = AnsiConsole.Ask<String>("User Name:");
+                AnsiConsole.Clear();
                 string email = AnsiConsole.Ask<String>("Email:");
+                AnsiConsole.Clear();
                 string password = AnsiConsole.Prompt(new TextPrompt<string>("Password:").Secret());
+                AnsiConsole.Clear();
+                ActualUser = new User(name, email, password);
+                UsersList.Add(ActualUser);
+                var jsonUsuarios = JsonSerializer.Serialize(UsersList, new JsonSerializerOptions { WriteIndented = true, PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+                File.WriteAllText(@"..\BookyBook.Data\Data.Users.json", jsonUsuarios);
                 AnsiConsole.MarkupLine(name);
                 AnsiConsole.MarkupLine(email);
                 AnsiConsole.MarkupLine(password);
