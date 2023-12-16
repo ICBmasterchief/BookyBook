@@ -25,7 +25,7 @@ public class UserData
         UsersList =  JsonSerializer.Deserialize<List<User>>(JsonUsers);
         } catch (System.Exception)
         {
-            Console.WriteLine("ERROR");
+            Console.WriteLine("ERROR TRYING ACCESS DATA");
             //throw;
         }
     }

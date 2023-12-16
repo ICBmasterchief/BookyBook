@@ -8,7 +8,7 @@ class Program
             menu.InitializeData();
             while (!menu.Exit)
             {
-                menu.ShowMainMenu();
+                menu.ShowMenu();
             }
         }
 }

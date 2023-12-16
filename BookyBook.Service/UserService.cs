@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
 using BookyBook.Data;
 using BookyBook.Domain;
 using Microsoft.VisualBasic;
@@ -7,6 +8,7 @@ namespace BookyBook.Service;
 public class UserService
 {
     public readonly UserData userData = new();
+    public User LoggedUser = new();
     public void SignUpUser(string name, string email, string password, string checkPassword)
     {
         if(password == checkPassword)
@@ -16,7 +18,7 @@ public class UserService
                 User user = new(name, email, password);
                 userData.AddUser(user);
             } else {
-                if (CheckExistingData(name, email) == false)
+                if (CheckExistingUserData(email, null) == false)
                 {
                     int? num = userData.UsersList.Last().IdNumber;
                     num++;
@@ -29,33 +31,40 @@ public class UserService
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("ERROR: Passwords do not match.");
             Console.ForegroundColor = ConsoleColor.White;
-            Thread.Sleep(1000);
         }
     }
-    public bool CheckExistingData(string name, string email)
+    public bool CheckExistingUserData(string? email, string? password, bool loggIn=false)
     {
-        foreach (var item in userData.UsersList)
+        foreach (var user in userData.UsersList)
         {
-            if (item.Name == name)
+            if (loggIn)
             {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("ERROR: Name already in use.");
-                Console.ForegroundColor = ConsoleColor.White;
-                Thread.Sleep(1000);
-                return true;
-            } else if (item.Email == email)
+                if (user.Email == email && user.Password == password)
+                {
+                    LoggedUser = user;
+                    return true;
+                }
+            } else if (user.Email == email)
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("ERROR: Email already in use.");
                 Console.ForegroundColor = ConsoleColor.White;
-                {
-                    
-                };
-                Thread.Sleep(1000);
                 return true;
             }
+        }
+        return false;
+    }
+    public bool LoggInUser(string email, string password)
+    {
+        if (CheckExistingUserData(email, password, true))
+        {
+            return true;
+        } else {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("ERROR: Invalid Email or Password.");
+            Console.ForegroundColor = ConsoleColor.White;
         }
         return false;
     }
