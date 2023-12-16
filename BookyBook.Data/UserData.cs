@@ -23,8 +23,7 @@ public class UserData
         {
         string JsonUsers = File.ReadAllText(UserJsonPath);
         UsersList =  JsonSerializer.Deserialize<List<User>>(JsonUsers);
-        }
-        catch (System.Exception)
+        } catch (System.Exception)
         {
             Console.WriteLine("ERROR");
             //throw;
