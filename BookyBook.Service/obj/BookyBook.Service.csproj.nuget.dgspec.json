@@ -25,7 +25,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Domain\\BookyBook.Domain.csproj": {
+                "projectPath": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Domain\\BookyBook.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

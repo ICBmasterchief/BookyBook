@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BookyBook.Domain\BookyBook.Domain.csproj" />
+    <ProjectReference Include="..\BookyBook.Service\BookyBook.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

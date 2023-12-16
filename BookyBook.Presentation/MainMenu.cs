@@ -2,25 +2,28 @@ using System.Dynamic;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using BookyBook.Domain;
+using BookyBook.Service;
 using Spectre.Console;
 using System.Text.Json;
+using BookyBook.Data;
 
 namespace BookyBook.Presentation;
+
 public class MainMenu
 {
     public bool Exit = false;
-    private User ActualUser = new User();
-    public List<User> UsersList = new List<User>();
+    public readonly UserService userService = new();
+    //public readonly UserData userData = new();
+    //private User ActualUser = new();
+    //public List<User> UsersList = new();
+    public void InitializeData()
+    {
+        userService.userData.GetRegisteredUsers();
+    }
     public void ShowMainMenu()
     {
-        AnsiConsole.Clear();
-        AnsiConsole.Write(
-    new FigletText("BookyBook")
-        .LeftJustified()
-        .Color(Color.Red));
-        AnsiConsole.MarkupLine("[red] _____________________________________________________________________[/]");
-        AnsiConsole.MarkupLine("[red] _____________________________________________________________________[/]");
-        AnsiConsole.MarkupLine("");
+        //AnsiConsole.Clear();
+        ShowLogo();
         var MainPrompt = new SelectionPrompt<string>()
                 .Title("Main Menu")
                 .PageSize(10)
@@ -58,19 +61,23 @@ public class MainMenu
                 break;
             case "Sign Up":
                 string name = AnsiConsole.Ask<String>("User Name:");
-                AnsiConsole.Clear();
+                //AnsiConsole.Clear();
+                //ShowLogo();
                 string email = AnsiConsole.Ask<String>("Email:");
-                AnsiConsole.Clear();
+                //AnsiConsole.Clear();
+                //ShowLogo();
                 string password = AnsiConsole.Prompt(new TextPrompt<string>("Password:").Secret());
-                AnsiConsole.Clear();
-                ActualUser = new User(name, email, password);
-                UsersList.Add(ActualUser);
-                var jsonUsuarios = JsonSerializer.Serialize(UsersList, new JsonSerializerOptions { WriteIndented = true, PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
-                File.WriteAllText(@"..\BookyBook.Data\Data.Users.json", jsonUsuarios);
-                AnsiConsole.MarkupLine(name);
-                AnsiConsole.MarkupLine(email);
-                AnsiConsole.MarkupLine(password);
-                Thread.Sleep(5000);
+                //AnsiConsole.Clear();
+                //ShowLogo();
+                userService.SignUpUser(name, email, password);
+                //ActualUser = new User(name, email, password);
+                //UsersList.Add(ActualUser);
+                //var jsonUsuarios = JsonSerializer.Serialize(UsersList, new JsonSerializerOptions { WriteIndented = true, PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+                //File.WriteAllText(@"..\BookyBook.Data\Data.Users.json", jsonUsuarios);
+                //AnsiConsole.MarkupLine(name);
+                //AnsiConsole.MarkupLine(email);
+                //AnsiConsole.MarkupLine(password);
+                Thread.Sleep(1000);
                 break;
             case "Search for books":
                 // Lógica para buscar libros
@@ -95,6 +102,17 @@ public class MainMenu
                 AnsiConsole.MarkupLine("[red]Invalid option. Try again.[/]");
                 break;
         }
+    }
+
+    private void ShowLogo()
+    {
+        AnsiConsole.Write(
+        new FigletText("BookyBook")
+        .LeftJustified()
+        .Color(Color.Red));
+        AnsiConsole.MarkupLine("[red] _____________________________________________________________________[/]");
+        AnsiConsole.MarkupLine("[red] _____________________________________________________________________[/]");
+        AnsiConsole.MarkupLine("");
     }
 }
 

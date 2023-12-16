@@ -27,6 +27,19 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
+      "BookyBook.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BookyBook.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BookyBook.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookyBook.Data.dll": {}
+        }
+      },
       "BookyBook.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -35,6 +48,20 @@
         },
         "runtime": {
           "bin/placeholder/BookyBook.Domain.dll": {}
+        }
+      },
+      "BookyBook.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BookyBook.Data": "1.0.0",
+          "BookyBook.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BookyBook.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookyBook.Service.dll": {}
         }
       }
     }
@@ -83,15 +110,26 @@
         "version.txt"
       ]
     },
+    "BookyBook.Data/1.0.0": {
+      "type": "project",
+      "path": "../BookyBook.Data/BookyBook.Data.csproj",
+      "msbuildProject": "../BookyBook.Data/BookyBook.Data.csproj"
+    },
     "BookyBook.Domain/1.0.0": {
       "type": "project",
       "path": "../BookyBook.Domain/BookyBook.Domain.csproj",
       "msbuildProject": "../BookyBook.Domain/BookyBook.Domain.csproj"
+    },
+    "BookyBook.Service/1.0.0": {
+      "type": "project",
+      "path": "../BookyBook.Service/BookyBook.Service.csproj",
+      "msbuildProject": "../BookyBook.Service/BookyBook.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "BookyBook.Domain >= 1.0.0",
+      "BookyBook.Service >= 1.0.0",
       "Spectre.Console >= 0.48.0"
     ]
   },
@@ -122,6 +160,9 @@
           "projectReferences": {
             "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Domain\\BookyBook.Domain.csproj": {
               "projectPath": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Domain\\BookyBook.Domain.csproj"
+            },
+            "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Service\\BookyBook.Service.csproj": {
+              "projectPath": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Service\\BookyBook.Service.csproj"
             }
           }
         }

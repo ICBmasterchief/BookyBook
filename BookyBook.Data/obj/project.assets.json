@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "BookyBook.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BookyBook.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookyBook.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BookyBook.Domain/1.0.0": {
+      "type": "project",
+      "path": "../BookyBook.Domain/BookyBook.Domain.csproj",
+      "msbuildProject": "../BookyBook.Domain/BookyBook.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "BookyBook.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\ignac\\.nuget\\packages\\": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Domain\\BookyBook.Domain.csproj": {
+              "projectPath": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Domain\\BookyBook.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

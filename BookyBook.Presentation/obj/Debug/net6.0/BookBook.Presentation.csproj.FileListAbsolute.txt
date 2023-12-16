@@ -17,3 +17,7 @@ A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\Booky
 A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Presentation\obj\Debug\net6.0\BookBook.Presentation.pdb
 A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Presentation\obj\Debug\net6.0\BookBook.Presentation.genruntimeconfig.cache
 A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Presentation\obj\Debug\net6.0\ref\BookBook.Presentation.dll
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Presentation\bin\Debug\net6.0\BookyBook.Data.dll
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Presentation\bin\Debug\net6.0\BookyBook.Service.dll
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Presentation\bin\Debug\net6.0\BookyBook.Service.pdb
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Presentation\bin\Debug\net6.0\BookyBook.Data.pdb

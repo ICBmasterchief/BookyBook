@@ -9,6 +9,7 @@
       "BookBook.Presentation/1.0.0": {
         "dependencies": {
           "BookyBook.Domain": "1.0.0",
+          "BookyBook.Service": "1.0.0",
           "Spectre.Console": "0.48.0"
         },
         "runtime": {
@@ -27,9 +28,26 @@
         }
       },
       "System.Memory/4.5.5": {},
+      "BookyBook.Data/1.0.0": {
+        "dependencies": {
+          "BookyBook.Domain": "1.0.0"
+        },
+        "runtime": {
+          "BookyBook.Data.dll": {}
+        }
+      },
       "BookyBook.Domain/1.0.0": {
         "runtime": {
           "BookyBook.Domain.dll": {}
+        }
+      },
+      "BookyBook.Service/1.0.0": {
+        "dependencies": {
+          "BookyBook.Data": "1.0.0",
+          "BookyBook.Domain": "1.0.0"
+        },
+        "runtime": {
+          "BookyBook.Service.dll": {}
         }
       }
     }
@@ -54,7 +72,17 @@
       "path": "system.memory/4.5.5",
       "hashPath": "system.memory.4.5.5.nupkg.sha512"
     },
+    "BookyBook.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "BookyBook.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BookyBook.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
