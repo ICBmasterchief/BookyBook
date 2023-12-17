@@ -1,0 +1,90 @@
+[
+  {
+    "Name": "Ignacio",
+    "Email": "a",
+    "Password": "a",
+    "RegistrationDate": "2023-12-16T01:14:32.5976736+01:00",
+    "PenaltyFee": 0,
+    "IdNumber": 1111
+  },
+  {
+    "Name": "d",
+    "Email": "d",
+    "Password": "d",
+    "RegistrationDate": "2023-12-16T01:14:38.5625308+01:00",
+    "PenaltyFee": 0,
+    "IdNumber": 1112
+  },
+  {
+    "Name": "f",
+    "Email": "f",
+    "Password": "f",
+    "RegistrationDate": "2023-12-16T01:14:52.6492548+01:00",
+    "PenaltyFee": 0,
+    "IdNumber": 1113
+  },
+  {
+    "Name": "Ignacio",
+    "Email": "ignaciocasaus1cns@gmail.com",
+    "Password": "cacaculo",
+    "RegistrationDate": "2023-12-16T11:25:23.3310824+01:00",
+    "PenaltyFee": 0,
+    "IdNumber": 1114
+  },
+  {
+    "Name": "i",
+    "Email": "i",
+    "Password": "i",
+    "RegistrationDate": "2023-12-16T13:56:02.4380197+01:00",
+    "PenaltyFee": 0,
+    "IdNumber": 1115
+  },
+  {
+    "Name": "u",
+    "Email": "u",
+    "Password": "u",
+    "RegistrationDate": "2023-12-16T13:59:16.9543847+01:00",
+    "PenaltyFee": 0,
+    "IdNumber": 1116
+  },
+  {
+    "Name": "q",
+    "Email": "q",
+    "Password": "saa",
+    "RegistrationDate": "2023-12-16T14:17:54.6673726+01:00",
+    "PenaltyFee": 0,
+    "IdNumber": 1117
+  },
+  {
+    "Name": "v",
+    "Email": "v",
+    "Password": "v",
+    "RegistrationDate": "2023-12-16T15:11:59.739387+01:00",
+    "PenaltyFee": 0,
+    "IdNumber": 1118
+  },
+  {
+    "Name": "v",
+    "Email": "m",
+    "Password": "m",
+    "RegistrationDate": "2023-12-16T20:21:46.0761117+01:00",
+    "PenaltyFee": 0,
+    "IdNumber": 1119
+  },
+  {
+    "Name": "Daniel Rica",
+    "Email": "danielrica1@gmail.com",
+    "Password": "ajedrez",
+    "RegistrationDate": "2023-12-16T22:51:04.6406236+01:00",
+    "PenaltyFee": 0,
+    "IdNumber": 1120
+  },
+  {
+    "Name": "Daniel Rica",
+    "Email": "danielrica2@gmail.com",
+    "Password": "ajedrez2",
+    "RegistrationDate": "2023-12-16T22:53:34.2104966+01:00",
+    "PenaltyFee": 0,
+    "IdNumber": 1121
+  }
+]

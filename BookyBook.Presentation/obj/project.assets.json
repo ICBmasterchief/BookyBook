@@ -1,0 +1,205 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "Spectre.Console/0.48.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.5"
+        },
+        "compile": {
+          "lib/net6.0/Spectre.Console.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Spectre.Console.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Memory/4.5.5": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "BookyBook.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BookyBook.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BookyBook.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookyBook.Data.dll": {}
+        }
+      },
+      "BookyBook.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BookyBook.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookyBook.Domain.dll": {}
+        }
+      },
+      "BookyBook.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BookyBook.Data": "1.0.0",
+          "BookyBook.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BookyBook.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookyBook.Service.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Spectre.Console/0.48.0": {
+      "sha512": "4Mc1UT7Azgtyb8FyNwK5FZmoZbKuT5PmY7ZwaKUytjD5kGFMNBACpOZTwYtkuY377YkYtZYBeDDTJUwTW86QXw==",
+      "type": "package",
+      "path": "spectre.console/0.48.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/Spectre.Console.dll",
+        "lib/net6.0/Spectre.Console.xml",
+        "lib/net7.0/Spectre.Console.dll",
+        "lib/net7.0/Spectre.Console.xml",
+        "lib/net8.0/Spectre.Console.dll",
+        "lib/net8.0/Spectre.Console.xml",
+        "lib/netstandard2.0/Spectre.Console.dll",
+        "lib/netstandard2.0/Spectre.Console.xml",
+        "small-logo.png",
+        "spectre.console.0.48.0.nupkg.sha512",
+        "spectre.console.nuspec"
+      ]
+    },
+    "System.Memory/4.5.5": {
+      "sha512": "XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
+      "type": "package",
+      "path": "system.memory/4.5.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Memory.dll",
+        "lib/net461/System.Memory.xml",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "ref/netcoreapp2.1/_._",
+        "system.memory.4.5.5.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "BookyBook.Data/1.0.0": {
+      "type": "project",
+      "path": "../BookyBook.Data/BookyBook.Data.csproj",
+      "msbuildProject": "../BookyBook.Data/BookyBook.Data.csproj"
+    },
+    "BookyBook.Domain/1.0.0": {
+      "type": "project",
+      "path": "../BookyBook.Domain/BookyBook.Domain.csproj",
+      "msbuildProject": "../BookyBook.Domain/BookyBook.Domain.csproj"
+    },
+    "BookyBook.Service/1.0.0": {
+      "type": "project",
+      "path": "../BookyBook.Service/BookyBook.Service.csproj",
+      "msbuildProject": "../BookyBook.Service/BookyBook.Service.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "BookyBook.Domain >= 1.0.0",
+      "BookyBook.Service >= 1.0.0",
+      "Spectre.Console >= 0.48.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\ignac\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Presentation\\BookBook.Presentation.csproj",
+      "projectName": "BookBook.Presentation",
+      "projectPath": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Presentation\\BookBook.Presentation.csproj",
+      "packagesPath": "C:\\Users\\ignac\\.nuget\\packages\\",
+      "outputPath": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Presentation\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\ignac\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Domain\\BookyBook.Domain.csproj": {
+              "projectPath": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Domain\\BookyBook.Domain.csproj"
+            },
+            "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Service\\BookyBook.Service.csproj": {
+              "projectPath": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Service\\BookyBook.Service.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "Spectre.Console": {
+            "target": "Package",
+            "version": "[0.48.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

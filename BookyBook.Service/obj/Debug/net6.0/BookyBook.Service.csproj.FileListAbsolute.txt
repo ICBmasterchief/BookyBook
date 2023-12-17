@@ -1,0 +1,17 @@
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\bin\Debug\net6.0\BookyBook.Service.deps.json
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\bin\Debug\net6.0\BookyBook.Service.dll
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\bin\Debug\net6.0\BookyBook.Service.pdb
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\bin\Debug\net6.0\BookyBook.Data.dll
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\bin\Debug\net6.0\BookyBook.Domain.dll
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\bin\Debug\net6.0\BookyBook.Domain.pdb
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\bin\Debug\net6.0\BookyBook.Data.pdb
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\obj\Debug\net6.0\BookyBook.Service.csproj.AssemblyReference.cache
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\obj\Debug\net6.0\BookyBook.Service.GeneratedMSBuildEditorConfig.editorconfig
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\obj\Debug\net6.0\BookyBook.Service.AssemblyInfoInputs.cache
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\obj\Debug\net6.0\BookyBook.Service.AssemblyInfo.cs
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\obj\Debug\net6.0\BookyBook.Service.csproj.CoreCompileInputs.cache
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\obj\Debug\net6.0\BookyBook.Service.csproj.CopyComplete
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\obj\Debug\net6.0\BookyBook.Service.dll
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\obj\Debug\net6.0\refint\BookyBook.Service.dll
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\obj\Debug\net6.0\BookyBook.Service.pdb
+A:\CURSO DAW\Desarrollo web en entorno servidor\proyectos dotnet\BookyBook\BookyBook.Service\obj\Debug\net6.0\ref\BookyBook.Service.dll
