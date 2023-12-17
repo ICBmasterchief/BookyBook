@@ -1,6 +1,6 @@
 [
   {
-    "Name": "a",
+    "Name": "Ignacio",
     "Email": "a",
     "Password": "a",
     "RegistrationDate": "2023-12-16T01:14:32.5976736+01:00",
@@ -70,5 +70,21 @@
     "RegistrationDate": "2023-12-16T20:21:46.0761117+01:00",
     "PenaltyFee": 0,
     "IdNumber": 1119
+  },
+  {
+    "Name": "Daniel Rica",
+    "Email": "danielrica1@gmail.com",
+    "Password": "ajedrez",
+    "RegistrationDate": "2023-12-16T22:51:04.6406236+01:00",
+    "PenaltyFee": 0,
+    "IdNumber": 1120
+  },
+  {
+    "Name": "Daniel Rica",
+    "Email": "danielrica2@gmail.com",
+    "Password": "ajedrez2",
+    "RegistrationDate": "2023-12-16T22:53:34.2104966+01:00",
+    "PenaltyFee": 0,
+    "IdNumber": 1121
   }
 ]

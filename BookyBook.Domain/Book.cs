@@ -7,7 +7,7 @@ public class Book
     public int? Year { get; set; }
     public int Copies { get; set; } = 1;
     public decimal? Score { get; set; }
-    private int? IdNumber { get; set; }
+    public int? IdNumber { get; set; }
     private static int IdNumberSeed = 10000;
 
     public Book(){}
@@ -18,6 +18,13 @@ public class Book
         this.Year = year;
         this.Score = score;
         this.IdNumber = IdNumberSeed;
-        IdNumberSeed++;
+    }
+    public Book(string title, string author, string genre, int year, decimal score, int? idNumber){
+        this.Title = title;
+        this.Author = author;
+        this.Genre = genre;
+        this.Year = year;
+        this.Score = score;
+        this.IdNumber = idNumber;
     }
 }

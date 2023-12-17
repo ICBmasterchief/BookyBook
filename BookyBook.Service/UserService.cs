@@ -17,15 +17,14 @@ public class UserService
             {
                 User user = new(name, email, password);
                 userData.AddUser(user);
-            } else {
-                if (CheckExistingUserData(email, null) == false)
-                {
+            } else if (CheckExistingUserData(email, null) == false)
+            {
                     int? num = userData.UsersList.Last().IdNumber;
                     num++;
                     User user = new(name, email, password, num);
                     userData.AddUser(user);
-                }
             }
+            
         } else {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
