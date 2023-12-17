@@ -109,6 +109,9 @@ public class MainMenu
                 Thread.Sleep(2000);
                 AnsiConsole.Clear();
                 break;
+            case "- Donate a book":
+
+                break;
             case "- My Account":
                 NumMenu = 3;
                 break;
