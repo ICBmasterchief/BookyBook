@@ -14,6 +14,7 @@ public class MainMenu
 {
     public bool Exit = false;
     public readonly UserService userService = new();
+    public readonly BookService bookService = new();
     private string? Option;
     private int NumMenu = 1;
     private readonly SelectionPrompt<string> MainPrompt = new SelectionPrompt<string>()
@@ -40,6 +41,7 @@ public class MainMenu
     public void InitializeData()
     {
         userService.userData.GetRegisteredUsers();
+        bookService.bookData.GetRegisteredBooks();
     }
     public void ShowMenu() 
     {
@@ -110,7 +112,30 @@ public class MainMenu
                 AnsiConsole.Clear();
                 break;
             case "- Donate a book":
-
+                string title = AnsiConsole.Ask<String>("Book title:");
+                string author = AnsiConsole.Ask<String>("Author:");
+                int copies;
+                if (bookService.CheckExistingBookData(title, author))
+                {
+                    AnsiConsole.MarkupLine("[yellow]We already have this book.[/]");
+                    if (AnsiConsole.Confirm("Do you want to add new copies?"))
+                    {
+                        copies = int.Parse(AnsiConsole.Ask<String>("Copies to donate:"));
+                        AnsiConsole.MarkupLine("Thank you!");
+                        bookService.DonateBook(title, author, "", 0, copies, 0);
+                    } else {
+                        AnsiConsole.MarkupLine("Ok... :(");
+                    }
+                } else {
+                    string genre = AnsiConsole.Ask<String>("Genre:");
+                    int year = int.Parse(AnsiConsole.Ask<String>("Year:"));
+                    copies = int.Parse(AnsiConsole.Ask<String>("Copies to donate:"));
+                    decimal score = decimal.Parse(AnsiConsole.Ask<String>("Score:"));
+                    AnsiConsole.MarkupLine("[yellow]Books added to our library.[/]");
+                    AnsiConsole.MarkupLine("Thank you!");
+                    bookService.DonateBook(title, author, genre, year, copies, score);
+                }
+                Thread.Sleep(2000);
                 break;
             case "- My Account":
                 NumMenu = 3;
@@ -119,7 +144,7 @@ public class MainMenu
                 NumMenu = 2;
                 break;
             case "- Exit":
-                AnsiConsole.MarkupLine("EXITING THE APP IN 1 SECONDS");
+                AnsiConsole.MarkupLine("EXITING THE APP IN 2 SECONDS");
                 Thread.Sleep(2000);
                 AnsiConsole.Clear();
                 Exit = true;
