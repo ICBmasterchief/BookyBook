@@ -33,6 +33,7 @@ public class MainMenu
         .AddChoices("- Return a book")
         .AddChoices("- Donate a book")
         .AddChoices("- My Account")
+        .AddChoices("- Log Out")
         .AddChoices("- Exit");
     private readonly SelectionPrompt<string> AccountPrompt = new SelectionPrompt<string>()
         .PageSize(10)
@@ -59,12 +60,12 @@ public class MainMenu
                 Option = AnsiConsole.Prompt(LoggedInPrompt);
                 break;
             case 3:
-                AnsiConsole.MarkupLine("[yellow]ACCOUNT MENU[/]");
+                AnsiConsole.MarkupLine("[green]ACCOUNT MENU[/]");
                 AnsiConsole.MarkupLine("");
                 AnsiConsole.MarkupLine($"Name: {userService.LoggedUser.Name}");
                 AnsiConsole.MarkupLine($"Email: {userService.LoggedUser.Email}");
                 AnsiConsole.MarkupLine($"Registration date: {userService.LoggedUser.RegistrationDate}");
-                AnsiConsole.MarkupLine($"Penalty fee: {userService.LoggedUser.PenaltyFee} €");
+                AnsiConsole.MarkupLine($"Penalty fee: {userService.LoggedUser.PenaltyFee} $");
                 AnsiConsole.MarkupLine("");
                 Option = AnsiConsole.Prompt(AccountPrompt);
                 break;
@@ -103,7 +104,27 @@ public class MainMenu
                 break;
             case "- Search for books":
                 AnsiConsole.MarkupLine("YOU ARE SEARCHING FOR BOOKS");
-                Thread.Sleep(2000);
+                string searchTitle = AnsiConsole.Ask<String>("Book title:");
+                string SearchAuthor = AnsiConsole.Ask<String>("Author:");
+                if (bookService.SearchBook(searchTitle, SearchAuthor).Title != null)
+                {
+                    Book findedBook = bookService.SearchBook(searchTitle, SearchAuthor);
+                    AnsiConsole.MarkupLine("");
+                    AnsiConsole.MarkupLine("[yellow]Book Found:[/]");
+                    AnsiConsole.MarkupLine("");
+                    AnsiConsole.MarkupLine($"Title: {findedBook.Title}");
+                    AnsiConsole.MarkupLine($"Author: {findedBook.Author}");
+                    AnsiConsole.MarkupLine($"Genre: {findedBook.Genre}");
+                    AnsiConsole.MarkupLine($"Year: {findedBook.Year}");
+                    AnsiConsole.MarkupLine($"Copies: {findedBook.Copies}");
+                    AnsiConsole.MarkupLine($"Score: {findedBook.Score}");
+                    AnsiConsole.MarkupLine("");
+                    AnsiConsole.Prompt(new SelectionPrompt<string>().AddChoices("<-Back to menu"));
+                } else {
+                    AnsiConsole.MarkupLine("");
+                    AnsiConsole.MarkupLine("[yellow]No books found, sorry :([/]");
+                    Thread.Sleep(2000);
+                }
                 AnsiConsole.Clear();
                 break;
             case "- Show book catalog":
@@ -142,6 +163,10 @@ public class MainMenu
                 break;
             case "<-Back to menu":
                 NumMenu = 2;
+                break;
+            case "- Log Out":
+                userService.LoggedUser = new();
+                NumMenu = 1;
                 break;
             case "- Exit":
                 AnsiConsole.MarkupLine("EXITING THE APP IN 2 SECONDS");

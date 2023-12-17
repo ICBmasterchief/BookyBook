@@ -6,7 +6,7 @@
     "Year": 1954,
     "Copies": 1,
     "Score": 8.8,
-    "IdNumber": 10000
+    "IdNumber": 10001
   },
   {
     "Title": "El Capitan Alatriste",
@@ -15,7 +15,7 @@
     "Year": 1996,
     "Copies": 1,
     "Score": 7.44,
-    "IdNumber": 10001
+    "IdNumber": 10002
   },
   {
     "Title": "Frankenstein",
@@ -24,7 +24,7 @@
     "Year": 1818,
     "Copies": 3,
     "Score": 7.8,
-    "IdNumber": 10002
+    "IdNumber": 10003
   },
   {
     "Title": "a",
@@ -33,15 +33,24 @@
     "Year": 1,
     "Copies": 7,
     "Score": 1,
-    "IdNumber": 10003
+    "IdNumber": 10004
   },
   {
     "Title": "c",
     "Author": "c",
     "Genre": "c",
     "Year": 1,
-    "Copies": 1,
+    "Copies": 3,
     "Score": 1,
-    "IdNumber": 10004
+    "IdNumber": 10005
+  },
+  {
+    "Title": "patata",
+    "Author": "patata",
+    "Genre": "patata",
+    "Year": 0,
+    "Copies": 0,
+    "Score": 0,
+    "IdNumber": 10006
   }
 ]

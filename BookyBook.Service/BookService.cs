@@ -36,4 +36,12 @@ public class BookService
         }
         return false;
     }
+    public Book SearchBook(string title, string author)
+    {
+        if (CheckExistingBookData(title, author))
+        {
+            return bookData.BooksList[existingBookIndex];
+        }
+        return new();
+    }
 }

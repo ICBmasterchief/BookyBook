@@ -8,7 +8,7 @@ public class Book
     public int? Copies { get; set; }
     public decimal? Score { get; set; }
     public int? IdNumber { get; set; }
-    private static int IdNumberSeed = 10000;
+    private static int IdNumberSeed = 10001;
 
     public Book(){}
     public Book(string title, string author, string genre, int year, int copies, decimal score){

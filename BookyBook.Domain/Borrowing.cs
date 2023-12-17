@@ -1,8 +1,8 @@
 namespace BookyBook.Domain;
 public class Borrowing
 {
-    public User? User { get; set; }
-    public Book? Book { get; set; }
+    public int? UserId { get; set; }
+    public int? BookId { get; set; }
     public DateTime? BorrowingDate { get; set; }
     public DateTime? ReturnDate { get; set; }
     //public bool Renewed { get; set; } = false;
@@ -11,9 +11,9 @@ public class Borrowing
     private static int IdNumberSeed = 1;
 
     public Borrowing(){}
-    public Borrowing(User user, Book book){
-        this.User = user;
-        this.Book = book;
+    public Borrowing(int userId, int bookId){
+        this.UserId = userId;
+        this.BookId = bookId;
         this.BorrowingDate = DateTime.Now;
         this.IdNumber = IdNumberSeed;
         IdNumberSeed++;
