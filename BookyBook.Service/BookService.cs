@@ -36,12 +36,21 @@ public class BookService
         }
         return false;
     }
-    public Book SearchBook(string title, string author)
+    public List<Book> SearchBooks(string searchText)
     {
-        if (CheckExistingBookData(title, author))
+        List<Book> list = new();
+        foreach (var book in bookData.BooksList)
         {
-            return bookData.BooksList[existingBookIndex];
+            if (book.Title.Contains(searchText) || book.Author.Contains(searchText))
+            {
+                list.Add(book);
+            }
         }
-        return new();
+        return list;
+    }
+    public List<Book> GetBookList()
+    {
+        bookData.GetRegisteredBooks();
+        return bookData.BooksList;
     }
 }

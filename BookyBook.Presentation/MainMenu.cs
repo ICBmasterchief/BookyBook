@@ -17,6 +17,7 @@ public class MainMenu
     public readonly BookService bookService = new();
     private string? Option;
     private int NumMenu = 1;
+    private Table BookTable = new();
     private readonly SelectionPrompt<string> MainPrompt = new SelectionPrompt<string>()
         .Title("MAIN MENU")
         .PageSize(10)
@@ -70,12 +71,6 @@ public class MainMenu
                 Option = AnsiConsole.Prompt(AccountPrompt);
                 break;
         }
-        
-
-        
-
-        
-
         ProcessOption(Option);
     }
 
@@ -84,26 +79,28 @@ public class MainMenu
         switch (option)
         {
             case "- Log in":
-                string logginEmail = AnsiConsole.Ask<String>("Email:");
+                string logginEmail = AnsiConsole.Ask<String>("Email:").ToLower();
                 string logginPassword = AnsiConsole.Prompt(new TextPrompt<string>("Password:").Secret());
                 if (userService.LoggInUser(logginEmail, logginPassword))
                 {
-                    AnsiConsole.MarkupLine("YOU ARE LOGGING IN");
+                    AnsiConsole.MarkupLine("[yellow]You are logging in.[/]");
                     NumMenu = 2;
                 }
                 Thread.Sleep(2000);
                 AnsiConsole.Clear();
                 break;
             case "- Sign Up":
-                string name = AnsiConsole.Ask<String>("User Name:");
-                string email = AnsiConsole.Ask<String>("Email:");
+                AnsiConsole.MarkupLine("[yellow]Creating new user.[/]");
+                AnsiConsole.MarkupLine("");
+                string name = AnsiConsole.Ask<String>("User Name:").ToLower();
+                string email = AnsiConsole.Ask<String>("Email:").ToLower();
                 string password = AnsiConsole.Prompt(new TextPrompt<string>("Password:").Secret());
                 string checkPassword = AnsiConsole.Prompt(new TextPrompt<string>("Repeat Password:").Secret());
                 userService.SignUpUser(name, email, password, checkPassword);
                 Thread.Sleep(2000);
                 break;
             case "- Search for books":
-                AnsiConsole.MarkupLine("YOU ARE SEARCHING FOR BOOKS");
+                /*AnsiConsole.MarkupLine("YOU ARE SEARCHING FOR BOOKS");
                 string searchTitle = AnsiConsole.Ask<String>("Book title:");
                 string SearchAuthor = AnsiConsole.Ask<String>("Author:");
                 if (bookService.SearchBook(searchTitle, SearchAuthor).Title != null)
@@ -124,17 +121,43 @@ public class MainMenu
                     AnsiConsole.MarkupLine("");
                     AnsiConsole.MarkupLine("[yellow]No books found, sorry :([/]");
                     Thread.Sleep(2000);
+                }*/
+                AnsiConsole.MarkupLine("[yellow]Searching for books.[/]");
+                AnsiConsole.MarkupLine("");
+                string searchText = AnsiConsole.Ask<String>("Write book title or author:").ToLower();
+                AnsiConsole.WriteLine("");
+                List<Book> findedBooks = bookService.SearchBooks(searchText);
+                if (findedBooks.Count != 0)
+                {
+                    CreateBookTable(findedBooks);
+                    AnsiConsole.Write(BookTable);
+                    AnsiConsole.Prompt(new SelectionPrompt<string>().AddChoices("<-Back to menu"));
+                } else {
+                    AnsiConsole.MarkupLine("[yellow]No books found, sorry :([/]");
+                    Thread.Sleep(2000);
                 }
                 AnsiConsole.Clear();
                 break;
             case "- Show book catalog":
-                AnsiConsole.MarkupLine("HERE YOU HAVE ALL THE BOOKS");
-                Thread.Sleep(2000);
+                List<Book> listBooks = bookService.GetBookList();
+                if (listBooks.Count != 0)
+                {
+                    AnsiConsole.MarkupLine("[green]Book catalog:[/]");
+                    AnsiConsole.MarkupLine("");
+                    CreateBookTable(listBooks);
+                    AnsiConsole.Write(BookTable);
+                    AnsiConsole.Prompt(new SelectionPrompt<string>().AddChoices("<-Back to menu"));
+                } else {
+                    AnsiConsole.MarkupLine("[yellow]We don't have any books yet, sorry :([/]");
+                    Thread.Sleep(2000);
+                }
                 AnsiConsole.Clear();
                 break;
             case "- Donate a book":
-                string title = AnsiConsole.Ask<String>("Book title:");
-                string author = AnsiConsole.Ask<String>("Author:");
+                AnsiConsole.MarkupLine("[yellow]What book do you want to donate?[/]");
+                AnsiConsole.MarkupLine("");
+                string title = AnsiConsole.Ask<String>("Book title:").ToLower();
+                string author = AnsiConsole.Ask<String>("Author:").ToLower();
                 int copies;
                 if (bookService.CheckExistingBookData(title, author))
                 {
@@ -148,7 +171,7 @@ public class MainMenu
                         AnsiConsole.MarkupLine("Ok... :(");
                     }
                 } else {
-                    string genre = AnsiConsole.Ask<String>("Genre:");
+                    string genre = AnsiConsole.Ask<String>("Genre:").ToLower();
                     int year = int.Parse(AnsiConsole.Ask<String>("Year:"));
                     copies = int.Parse(AnsiConsole.Ask<String>("Copies to donate:"));
                     decimal score = decimal.Parse(AnsiConsole.Ask<String>("Score:"));
@@ -180,7 +203,7 @@ public class MainMenu
         }
     }
 
-    private void ShowLogo()
+    public void ShowLogo()
     {
         AnsiConsole.Write(
         new FigletText("BookyBook")
@@ -189,6 +212,15 @@ public class MainMenu
         AnsiConsole.MarkupLine("[red] _____________________________________________________________________[/]");
         AnsiConsole.MarkupLine("[red] _____________________________________________________________________[/]");
         AnsiConsole.MarkupLine("");
+    }
+    public void CreateBookTable(List<Book> bookList)
+    {
+        BookTable = new ();
+        BookTable.AddColumns("Title", "Author", "Genre", "Year", "Copies", "Score");
+        foreach (Book book in bookList)
+            {
+                BookTable.AddRow(book.Title, book.Author, book.Genre, book.Year.ToString(), book.Copies.ToString(), book.Score.ToString());
+            }
     }
 }
 
