@@ -15,6 +15,7 @@ public class MainMenu
     public bool Exit = false;
     public readonly UserService userService = new();
     public readonly BookService bookService = new();
+    public readonly BorrowingService borrowingService = new();
     private string? Option;
     private int NumMenu = 1;
     private Table BookTable = new();
@@ -39,11 +40,13 @@ public class MainMenu
     private readonly SelectionPrompt<string> AccountPrompt = new SelectionPrompt<string>()
         .PageSize(10)
         .AddChoices("- Pay penalty fee")
+        .AddChoices("- Borrowed books")
         .AddChoices("<-Back to menu");
     public void InitializeData()
     {
         userService.userData.GetRegisteredUsers();
         bookService.bookData.GetRegisteredBooks();
+        borrowingService.borrowingData.GetRegisteredBorrowings();
     }
     public void ShowMenu() 
     {
@@ -100,28 +103,6 @@ public class MainMenu
                 Thread.Sleep(2000);
                 break;
             case "- Search for books":
-                /*AnsiConsole.MarkupLine("YOU ARE SEARCHING FOR BOOKS");
-                string searchTitle = AnsiConsole.Ask<String>("Book title:");
-                string SearchAuthor = AnsiConsole.Ask<String>("Author:");
-                if (bookService.SearchBook(searchTitle, SearchAuthor).Title != null)
-                {
-                    Book findedBook = bookService.SearchBook(searchTitle, SearchAuthor);
-                    AnsiConsole.MarkupLine("");
-                    AnsiConsole.MarkupLine("[yellow]Book Found:[/]");
-                    AnsiConsole.MarkupLine("");
-                    AnsiConsole.MarkupLine($"Title: {findedBook.Title}");
-                    AnsiConsole.MarkupLine($"Author: {findedBook.Author}");
-                    AnsiConsole.MarkupLine($"Genre: {findedBook.Genre}");
-                    AnsiConsole.MarkupLine($"Year: {findedBook.Year}");
-                    AnsiConsole.MarkupLine($"Copies: {findedBook.Copies}");
-                    AnsiConsole.MarkupLine($"Score: {findedBook.Score}");
-                    AnsiConsole.MarkupLine("");
-                    AnsiConsole.Prompt(new SelectionPrompt<string>().AddChoices("<-Back to menu"));
-                } else {
-                    AnsiConsole.MarkupLine("");
-                    AnsiConsole.MarkupLine("[yellow]No books found, sorry :([/]");
-                    Thread.Sleep(2000);
-                }*/
                 AnsiConsole.MarkupLine("[yellow]Searching for books.[/]");
                 AnsiConsole.MarkupLine("");
                 string searchText = AnsiConsole.Ask<String>("Write book title or author:").ToLower();
@@ -164,7 +145,7 @@ public class MainMenu
                     AnsiConsole.MarkupLine("[yellow]We already have this book.[/]");
                     if (AnsiConsole.Confirm("Do you want to add new copies?"))
                     {
-                        copies = int.Parse(AnsiConsole.Ask<String>("Copies to donate:"));
+                        copies = AnsiConsole.Ask<int>("Copies to donate:");
                         AnsiConsole.MarkupLine("Thank you!");
                         bookService.DonateBook(title, author, "", 0, copies, 0);
                     } else {
@@ -172,8 +153,8 @@ public class MainMenu
                     }
                 } else {
                     string genre = AnsiConsole.Ask<String>("Genre:").ToLower();
-                    int year = int.Parse(AnsiConsole.Ask<String>("Year:"));
-                    copies = int.Parse(AnsiConsole.Ask<String>("Copies to donate:"));
+                    int year = AnsiConsole.Ask<int>("Year:");
+                    copies = AnsiConsole.Ask<int>("Copies to donate:");
                     decimal score = decimal.Parse(AnsiConsole.Ask<String>("Score:"));
                     AnsiConsole.MarkupLine("[yellow]Books added to our library.[/]");
                     AnsiConsole.MarkupLine("Thank you!");
@@ -181,8 +162,56 @@ public class MainMenu
                 }
                 Thread.Sleep(2000);
                 break;
+            case "- Borrow a book":
+                AnsiConsole.MarkupLine("[green]Borrowing a book[/]");
+                AnsiConsole.MarkupLine("");
+                int borrowIdBook = AnsiConsole.Ask<int>("Book ID to borrow:");
+                if (bookService.CheckExistingBookDataById(borrowIdBook))
+                {
+                    if (borrowingService.CheckExistingBorrowingData(userService.LoggedUser.IdNumber, borrowIdBook))
+                    {
+                        AnsiConsole.MarkupLine("[yellow]You already borrowed this book.[/]");
+                    } else {
+                        borrowingService.BorrowBook(userService.LoggedUser.IdNumber, borrowIdBook);
+                        foreach (var book in bookService.bookData.BooksList)
+                        {
+                            if (book.IdNumber == borrowIdBook)
+                            {
+                                if (book.Copies > 0)
+                                {
+                                    book.Copies -= 1;
+                                    bookService.bookData.SaveBookData();
+                                    AnsiConsole.MarkupLine($"[yellow]'{book.Title}' borrowed succesfully![/]");
+                                } else {
+                                    AnsiConsole.MarkupLine("[yellow]We don't have copies of that book available, sorry :([/]");
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    AnsiConsole.MarkupLine("[yellow]That's not a valid Book ID.[/]");
+                }
+                Thread.Sleep(2000);
+                break;
+            case "- Return a book":
+
+                break;
             case "- My Account":
                 NumMenu = 3;
+                break;
+            case "- Borrowed books":
+                List<Borrowing> borrowingList = borrowingService.HasBorrowings(userService.LoggedUser.IdNumber);
+                if (borrowingList.Count != 0)
+                {
+                    AnsiConsole.MarkupLine("[yellow]You have borrowed the following books:[/]");
+                    CreateBorrowingsTable(borrowingList);
+                    AnsiConsole.Write(BookTable);
+                    AnsiConsole.Prompt(new SelectionPrompt<string>().AddChoices("<-Back to menu"));
+                } else {
+                    AnsiConsole.MarkupLine("[yellow]You don't have any books borrowed yet.[/]");
+                    Thread.Sleep(2000);
+                }
+                
                 break;
             case "<-Back to menu":
                 NumMenu = 2;
@@ -216,11 +245,29 @@ public class MainMenu
     public void CreateBookTable(List<Book> bookList)
     {
         BookTable = new ();
-        BookTable.AddColumns("Title", "Author", "Genre", "Year", "Copies", "Score");
+        BookTable.AddColumns("ID", "Title", "Author", "Genre", "Year", "Copies", "Score");
         foreach (Book book in bookList)
             {
-                BookTable.AddRow(book.Title, book.Author, book.Genre, book.Year.ToString(), book.Copies.ToString(), book.Score.ToString());
+                BookTable.AddRow(book.IdNumber.ToString(), book.Title, book.Author, book.Genre, book.Year.ToString(), book.Copies.ToString(), book.Score.ToString());
             }
+    }
+    public void CreateBorrowingsTable(List<Borrowing> borrowingList)
+    {
+        List<Book> booksBorrowedlist = new();
+        BookTable = new ();
+        BookTable.AddColumns("ID", "Title", "Author", "Borrowing Date", "Borrowing End Date");
+        foreach (var borrowing in borrowingList)
+        {
+            foreach (var book in bookService.bookData.BooksList)
+            {
+                if (book.IdNumber == borrowing.BookId)
+                {
+                    string borrowingDate = borrowing.BorrowingDate.ToString();
+                    BookTable.AddRow(book.IdNumber.ToString(), book.Title, book.Author, borrowing.BorrowingDate.ToString(), borrowing.DateToReturn.ToString());
+                    booksBorrowedlist.Add(book);
+                }
+            }
+        }
     }
 }
 

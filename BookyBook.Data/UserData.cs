@@ -11,8 +11,7 @@ public class UserData
     public void AddUser(User user)
     {
         UsersList.Add(user);
-        string JsonUsers = JsonSerializer.Serialize(UsersList, new JsonSerializerOptions {WriteIndented = true});
-        File.WriteAllText(UserJsonPath, JsonUsers);
+        SaveUserData();
     }
     public void GetRegisteredUsers()
     {
@@ -25,5 +24,10 @@ public class UserData
             Console.WriteLine("ERROR TRYING ACCESS DATA");
             //throw;
         }
+    }
+    public void SaveUserData()
+    {
+        string JsonUsers = JsonSerializer.Serialize(UsersList, new JsonSerializerOptions {WriteIndented = true});
+        File.WriteAllText(UserJsonPath, JsonUsers);
     }
 }

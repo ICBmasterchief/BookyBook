@@ -14,7 +14,7 @@ public class BookService
             bookData.AddBook(book);
         } else if (CheckExistingBookData(title, author) == false)
         {
-            int? num = bookData.BooksList.Last().IdNumber;
+            int num = bookData.BooksList.Last().IdNumber;
             num++;
             book = new(title, author, genre, year, copies, score, num);
             bookData.AddBook(book);
@@ -29,6 +29,19 @@ public class BookService
         foreach (var book in bookData.BooksList)
         {
             if (book.Title == title && book.Author == author)
+            {
+                return true;
+            }
+            existingBookIndex++;
+        }
+        return false;
+    }
+    public bool CheckExistingBookDataById(int bookId)
+    {
+        existingBookIndex = 0;
+        foreach (var book in bookData.BooksList)
+        {
+            if (book.IdNumber == bookId)
             {
                 return true;
             }

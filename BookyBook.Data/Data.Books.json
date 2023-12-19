@@ -4,7 +4,7 @@
     "Author": "j. r. r. tolkien",
     "Genre": "fantasy",
     "Year": 1954,
-    "Copies": 1,
+    "Copies": 0,
     "Score": 8.8,
     "IdNumber": 10001
   },
@@ -22,7 +22,7 @@
     "Author": "mary shelley",
     "Genre": "gotic novel",
     "Year": 1818,
-    "Copies": 3,
+    "Copies": 2,
     "Score": 7.8,
     "IdNumber": 10003
   },

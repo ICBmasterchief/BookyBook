@@ -1,5 +1,26 @@
-{
-  "sdk": {
-    "version": "6.0.415"
+[
+  {
+    "UserId": 1111,
+    "BookId": 10007,
+    "BorrowingDate": "2023-12-19T00:00:00+01:00",
+    "DateToReturn": "2024-01-02T00:00:00+01:00",
+    "Returned": false,
+    "IdNumber": 1
+  },
+  {
+    "UserId": 1111,
+    "BookId": 10003,
+    "BorrowingDate": "2023-12-19T00:00:00+01:00",
+    "DateToReturn": "2024-01-02T00:00:00+01:00",
+    "Returned": false,
+    "IdNumber": 2
+  },
+  {
+    "UserId": 1111,
+    "BookId": 10001,
+    "BorrowingDate": "2023-12-19T00:00:00+01:00",
+    "DateToReturn": "2024-01-02T00:00:00+01:00",
+    "Returned": false,
+    "IdNumber": 3
   }
-}
+]
