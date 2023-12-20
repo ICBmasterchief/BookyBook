@@ -13,33 +13,19 @@ public class BorrowingService
         if (borrowingData.BorrowingsList.Count == 0)
         {
             borrowingData.AddBorrowing(borrowing);
-        } else if (CheckExistingBorrowingData(userId, bookId) == false)
-        {
+        } else {
             int num = borrowingData.BorrowingsList.Last().IdNumber;
             num++;
             borrowing = new(userId, bookId, num);
             borrowingData.AddBorrowing(borrowing);
-        }
+        } 
     }
-    public bool CheckExistingBorrowingData(int userId, int bookId)
-    {
-        existingBorrowIndex = 0;
-        foreach (var borrowing in borrowingData.BorrowingsList)
-        {
-            if (borrowing.UserId == userId && borrowing.BookId == bookId)
-            {
-                return true;
-            }
-            existingBorrowIndex++;
-        }
-        return false;
-    }
-    public List<Borrowing> HasBorrowings(int userId)
+    public List<Borrowing> HasActiveBorrowings(int userId)
     {
         List<Borrowing> list = new();
         foreach (var borrowing in borrowingData.BorrowingsList)
         {
-            if (borrowing.UserId == userId)
+            if (borrowing.UserId == userId && borrowing.Returned == false)
             {
                 list.Add(borrowing);
             }

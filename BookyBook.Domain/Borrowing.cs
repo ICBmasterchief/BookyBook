@@ -7,8 +7,9 @@ public class Borrowing
     public int? BookId { get; set; }
     public DateTime? BorrowingDate { get; set; }
     public DateTime? DateToReturn { get; set; }
-    //public bool Renewed { get; set; } = false;
+    public DateTime? ReturnedDate { get; set; }
     public bool Returned { get; set; } = false;
+    public int PenaltyFee { get; set; } = 0;
     public int IdNumber { get; set; }
     private static int IdNumberSeed = 1;
 
