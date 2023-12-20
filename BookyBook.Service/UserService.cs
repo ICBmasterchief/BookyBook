@@ -19,7 +19,7 @@ public class UserService
                 userData.AddUser(user);
             } else if (CheckExistingUserData(email, null) == false)
             {
-                    int? num = userData.UsersList.Last().IdNumber;
+                    int num = userData.UsersList.Last().IdNumber;
                     num++;
                     User user = new(name, email, password, num);
                     userData.AddUser(user);

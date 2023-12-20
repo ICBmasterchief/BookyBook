@@ -9,8 +9,7 @@ public class BookData
     public void AddBook(Book book)
     {
         BooksList.Add(book);
-        string JsonBooks = JsonSerializer.Serialize(BooksList, new JsonSerializerOptions {WriteIndented = true});
-        File.WriteAllText(BookJsonPath, JsonBooks);
+        SaveBookData();
     }
     public void GetRegisteredBooks()
     {
@@ -23,5 +22,10 @@ public class BookData
             Console.WriteLine("ERROR TRYING ACCESS DATA");
             //throw;
         }
+    }
+    public void SaveBookData()
+    {
+        string JsonBooks = JsonSerializer.Serialize(BooksList, new JsonSerializerOptions {WriteIndented = true});
+        File.WriteAllText(BookJsonPath, JsonBooks);
     }
 }

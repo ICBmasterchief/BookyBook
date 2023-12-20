@@ -6,7 +6,7 @@ public class User
     public string? Password { get; set; }
     public DateTime? RegistrationDate { get; set; }
     public decimal PenaltyFee { get; set; } = 0;
-    public int? IdNumber { get; set; }
+    public int IdNumber { get; set; }
     private static int IdNumberSeed = 1111;
 
     public User(){} 
@@ -17,7 +17,7 @@ public class User
         this.RegistrationDate = DateTime.Now;
         this.IdNumber = IdNumberSeed;
     }
-    public User(string name, string email, string password, int? idNumber){
+    public User(string name, string email, string password, int idNumber){
         this.Name = name;
         this.Email = email;
         this.Password = password;
