@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using BookyBook.Data;
 using BookyBook.Domain;
+//using Spectre.Console;
 using Microsoft.VisualBasic;
 
 namespace BookyBook.Service;
@@ -17,12 +18,14 @@ public class UserService
             {
                 User user = new(name, email, password);
                 userData.AddUser(user);
+                //AnsiConsole.MarkupLine("[yellow]User created succesfully![/]");
             } else if (CheckExistingUserData(email, null) == false)
             {
                     int num = userData.UsersList.Last().IdNumber;
                     num++;
                     User user = new(name, email, password, num);
                     userData.AddUser(user);
+                    //AnsiConsole.MarkupLine("[yellow]User created succesfully![/]");
             }
             
         } else {
@@ -66,5 +69,13 @@ public class UserService
             Console.ForegroundColor = ConsoleColor.White;
         }
         return false;
+    }
+    public void UpdateLoggedUserPenalty()
+    {
+        
+        if (userData.UsersList.Find(x => x.IdNumber == LoggedUser.IdNumber) != null)
+        {
+            userData.UsersList.Find(x => x.IdNumber == LoggedUser.IdNumber).PenaltyFee = LoggedUser.PenaltyFee;
+        }
     }
 }

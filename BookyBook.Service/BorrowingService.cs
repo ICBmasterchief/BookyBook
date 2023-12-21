@@ -32,4 +32,12 @@ public class BorrowingService
         }
         return list;
     }
+    public void UpdateBorrowingPenalty(int borrowingId, decimal penalty)
+    {
+        
+        if (borrowingData.BorrowingsList.Find(x => x.IdNumber == borrowingId) != null)
+        {
+            borrowingData.BorrowingsList.Find(x => x.IdNumber == borrowingId).PenaltyFee = penalty;
+        }
+    }
 }

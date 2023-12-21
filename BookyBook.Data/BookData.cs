@@ -5,7 +5,7 @@ namespace BookyBook.Data;
 public class BookData
 {
     public List<Book>? BooksList = new();
-    public string BookJsonPath = @"..\BookyBook.Data\Data.Books.json";
+    private readonly string BookJsonPath = @"..\BookyBook.Data\Data.Books.json";
     public void AddBook(Book book)
     {
         BooksList.Add(book);
