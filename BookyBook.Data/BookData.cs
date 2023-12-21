@@ -6,6 +6,10 @@ public class BookData
 {
     public List<Book>? BooksList = new();
     private readonly string BookJsonPath = @"..\BookyBook.Data\Data.Books.json";
+    public BookData()
+    {
+        GetRegisteredBooks();
+    }
     public void AddBook(Book book)
     {
         BooksList.Add(book);

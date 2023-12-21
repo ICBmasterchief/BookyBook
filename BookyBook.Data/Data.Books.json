@@ -61,5 +61,23 @@
     "Copies": 2,
     "Score": 8.94,
     "IdNumber": 10007
+  },
+  {
+    "Title": "pulgarcito peque\u00F1ito",
+    "Author": "m. rajoy",
+    "Genre": "sci-fi",
+    "Year": 1993,
+    "Copies": 5,
+    "Score": 6.6,
+    "IdNumber": 10008
+  },
+  {
+    "Title": "t",
+    "Author": "t",
+    "Genre": "t",
+    "Year": 1,
+    "Copies": 1,
+    "Score": 1,
+    "IdNumber": 10009
   }
 ]

@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "eySJmQZu1HnmaCrmgmBbnenlvmQB2BHs8GV1i2d2UGK2lL6EcWq0Nnx2ZS5A7fDlOG/3Gjmij3v4IHKDhq7zIw==",
+  "dgSpecHash": "Nlr/PKIqo24ifbHrsC6Y4TEVxs4hofLlq3jwG3TUGvF+BTfG5aVI578b2ZcHlo3OqpxOTjdKsGcxvzNOqUaHZg==",
   "success": true,
   "projectFilePath": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Service\\BookyBook.Service.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ignac\\.nuget\\packages\\spectre.console\\0.48.0\\spectre.console.0.48.0.nupkg.sha512",
+    "C:\\Users\\ignac\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512"
+  ],
   "logs": []
 }

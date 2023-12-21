@@ -48,5 +48,25 @@
     "Returned": true,
     "PenaltyFee": 6.25,
     "IdNumber": 5
+  },
+  {
+    "UserId": 1111,
+    "BookId": 10004,
+    "BorrowingDate": "2023-12-21T00:00:00+01:00",
+    "DateToReturn": "2024-01-04T00:00:00+01:00",
+    "ReturnedDate": "2023-12-21T00:00:00+01:00",
+    "Returned": true,
+    "PenaltyFee": 0,
+    "IdNumber": 6
+  },
+  {
+    "UserId": 1111,
+    "BookId": 10009,
+    "BorrowingDate": "2023-12-21T00:00:00+01:00",
+    "DateToReturn": "2024-01-04T00:00:00+01:00",
+    "ReturnedDate": "2023-12-21T00:00:00+01:00",
+    "Returned": true,
+    "PenaltyFee": 0,
+    "IdNumber": 7
   }
 ]
