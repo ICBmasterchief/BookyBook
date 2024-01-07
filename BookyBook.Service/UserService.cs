@@ -38,7 +38,6 @@ public class UserService
         if (CheckExistingUserData(email, password, true))
         {
             AnsiConsole.MarkupLine("[yellow]You are logging in.[/]");
-            //NumMenu = 2;
             return true;
         }
         AnsiConsole.MarkupLine("[yellow]Invalid Email or Password.[/]");

@@ -26,7 +26,6 @@ public class UserData
         } catch (System.Exception)
         {
             Console.WriteLine("ERROR TRYING ACCESS DATA");
-            //throw;
         }
     }
     public void SaveUserData()

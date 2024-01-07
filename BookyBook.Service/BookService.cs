@@ -15,7 +15,6 @@ public class BookService
         string searchText = AnsiConsole.Ask<String>("Write book title or author:").ToLower();
         AnsiConsole.WriteLine("");
         List<Book> findedBooks =  bookData.BooksList.FindAll(x => x.Title.Contains(searchText) || x.Author.Contains(searchText));
-        //List<Book> findedBooks = SearchBooks(searchText);
         if (findedBooks.Count != 0)
         {
             CreateBookTable(findedBooks);
@@ -88,23 +87,6 @@ public class BookService
         }
         Thread.Sleep(3000);
     }
-    // public void DonateBook(string title, string author, string genre, int year, int copies, decimal score)
-    // {
-    //     Book book = new(title, author, genre, year, copies, score);
-    //     if (bookData.BooksList.Count == 0)
-    //     {
-    //         bookData.AddBook(book);
-    //     } else if (CheckExistingBookData(title, author) == false)
-    //     {
-    //         int num = bookData.BooksList.Last().IdNumber;
-    //         num++;
-    //         book = new(title, author, genre, year, copies, score, num);
-    //         bookData.AddBook(book);
-    //     } else {
-    //         bookData.BooksList[existingBookIndex].Copies += book.Copies;
-    //         bookData.SaveBookData();
-    //     }
-    // }
     public bool CheckExistingBookData(string? title, string? author)
     {
         existingBookIndex = 0;
@@ -131,18 +113,6 @@ public class BookService
         }
         return false;
     }
-    // public List<Book> SearchingBooks(string searchText)
-    // {
-    //     List<Book> list = new();
-    //     foreach (var book in bookData.BooksList)
-    //     {
-    //         if (book.Title.Contains(searchText) || book.Author.Contains(searchText))
-    //         {
-    //             list.Add(book);
-    //         }
-    //     }
-    //     return list;
-    // }
     public void CreateBookTable(List<Book> bookList)
     {
         BookTable = new ();

@@ -10,7 +10,6 @@ public class BorrowingService
     public readonly UserService userService = new();
     public readonly BookService bookService = new();
     public Table BookTable = new();
-    //public int existingBorrowIndex;
     public void BorrowBook()
     {
         AnsiConsole.MarkupLine("[green]Borrowing a book[/]");
@@ -67,7 +66,6 @@ public class BorrowingService
                 AnsiConsole.MarkupLine("[yellow]We don't have copies of that book available, sorry :([/]");
             }
         } else {
-            //ERROR
             AnsiConsole.MarkupLine("[red]ERROR in 'Borrow a book', book = null[/]");
         } 
     }
@@ -107,7 +105,6 @@ public class BorrowingService
                         userService.userData.SaveUserData();
                         AnsiConsole.MarkupLine($"[yellow]'{book.Title}' returned succesfully![/]");
                     } else {
-                        //ERROR
                         AnsiConsole.MarkupLine("[red]ERROR in 'Return a book', book = null[/]");
                     }
                 } else {
@@ -170,19 +167,6 @@ public class BorrowingService
         }
         Thread.Sleep(3000);
     }
-    // public void Borrow(int userId, int bookId)
-    // {
-    //     Borrowing borrowing = new(userId, bookId);
-    //     if (borrowingData.BorrowingsList.Count == 0)
-    //     {
-    //         borrowingData.AddBorrowing(borrowing);
-    //     } else {
-    //         int num = borrowingData.BorrowingsList.Last().IdNumber;
-    //         num++;
-    //         borrowing = new(userId, bookId, num);
-    //         borrowingData.AddBorrowing(borrowing);
-    //     } 
-    // }
     public List<Borrowing> HasActiveBorrowings(int userId)
     {
         List<Borrowing> list = new();

@@ -24,7 +24,6 @@ public class BorrowingData
         } catch (System.Exception)
         {
             Console.WriteLine("ERROR TRYING ACCESS DATA");
-            //throw;
         }
     }
     public void SaveBorrowingData()
