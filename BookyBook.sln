@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookyBook.Domain", "BookyBook.Domain\BookyBook.Domain.csproj", "{DC49B01A-D2B3-4990-922E-0A6F6E6EF4C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookBook.Presentation", "BookyBook.Presentation\BookBook.Presentation.csproj", "{BC3077AC-7356-40E4-AD50-C69E8130E3F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookyBook.Presentation", "BookyBook.Presentation\BookyBook.Presentation.csproj", "{BC3077AC-7356-40E4-AD50-C69E8130E3F2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookyBook.Data", "BookyBook.Data\BookyBook.Data.csproj", "{F81CF7B8-3A7D-4EEC-B652-864F27E7E0FC}"
 EndProject
