@@ -55,7 +55,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "BookyBook.Data": "1.0.0",
-          "BookyBook.Domain": "1.0.0"
+          "BookyBook.Domain": "1.0.0",
+          "Spectre.Console": "0.48.0"
         },
         "compile": {
           "bin/placeholder/BookyBook.Service.dll": {}

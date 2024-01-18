@@ -7,7 +7,11 @@ namespace BookyBook.Data;
 public class UserData
 {
     public List<User>? UsersList = new();
-    public string UserJsonPath = @"..\BookyBook.Data\Data.Users.json";
+    private readonly string UserJsonPath = @"..\BookyBook.Data\Data.Users.json";
+    public UserData()
+    {
+        GetRegisteredUsers();
+    }
     public void AddUser(User user)
     {
         UsersList.Add(user);
@@ -22,7 +26,6 @@ public class UserData
         } catch (System.Exception)
         {
             Console.WriteLine("ERROR TRYING ACCESS DATA");
-            //throw;
         }
     }
     public void SaveUserData()

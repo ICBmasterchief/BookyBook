@@ -14,14 +14,14 @@ public class User
         this.Name = name;
         this.Email = email;
         this.Password = password;
-        this.RegistrationDate = DateTime.Now;
+        this.RegistrationDate = DateTime.Today;
         this.IdNumber = IdNumberSeed;
     }
     public User(string name, string email, string password, int idNumber){
         this.Name = name;
         this.Email = email;
         this.Password = password;
-        this.RegistrationDate = DateTime.Now;
+        this.RegistrationDate = DateTime.Today;
         this.IdNumber = idNumber;
     }
 }

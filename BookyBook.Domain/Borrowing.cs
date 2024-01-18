@@ -9,7 +9,7 @@ public class Borrowing
     public DateTime? DateToReturn { get; set; }
     public DateTime? ReturnedDate { get; set; }
     public bool Returned { get; set; } = false;
-    public int PenaltyFee { get; set; } = 0;
+    public decimal PenaltyFee { get; set; } = 0;
     public int IdNumber { get; set; }
     private static int IdNumberSeed = 1;
 

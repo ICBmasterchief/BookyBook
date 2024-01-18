@@ -5,7 +5,11 @@ namespace BookyBook.Data;
 public class BorrowingData
 {
     public List<Borrowing>? BorrowingsList = new();
-    public string BorrowingJsonPath = @"..\BookyBook.Data\Data.Borrowings.json";
+    private readonly string BorrowingJsonPath = @"..\BookyBook.Data\Data.Borrowings.json";
+    public BorrowingData()
+    {
+        GetRegisteredBorrowings();
+    }
     public void AddBorrowing(Borrowing borrowing)
     {
         BorrowingsList.Add(borrowing);
@@ -20,7 +24,6 @@ public class BorrowingData
         } catch (System.Exception)
         {
             Console.WriteLine("ERROR TRYING ACCESS DATA");
-            //throw;
         }
     }
     public void SaveBorrowingData()

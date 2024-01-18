@@ -5,7 +5,11 @@ namespace BookyBook.Data;
 public class BookData
 {
     public List<Book>? BooksList = new();
-    public string BookJsonPath = @"..\BookyBook.Data\Data.Books.json";
+    private readonly string BookJsonPath = @"..\BookyBook.Data\Data.Books.json";
+    public BookData()
+    {
+        GetRegisteredBooks();
+    }
     public void AddBook(Book book)
     {
         BooksList.Add(book);
@@ -20,7 +24,6 @@ public class BookData
         } catch (System.Exception)
         {
             Console.WriteLine("ERROR TRYING ACCESS DATA");
-            //throw;
         }
     }
     public void SaveBookData()
