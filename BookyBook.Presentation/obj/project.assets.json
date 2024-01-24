@@ -140,9 +140,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Presentation\\BookBook.Presentation.csproj",
-      "projectName": "BookBook.Presentation",
-      "projectPath": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Presentation\\BookBook.Presentation.csproj",
+      "projectUniqueName": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Presentation\\BookyBook.Presentation.csproj",
+      "projectName": "BookyBook.Presentation",
+      "projectPath": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Presentation\\BookyBook.Presentation.csproj",
       "packagesPath": "C:\\Users\\ignac\\.nuget\\packages\\",
       "outputPath": "A:\\CURSO DAW\\Desarrollo web en entorno servidor\\proyectos dotnet\\BookyBook\\BookyBook.Presentation\\obj\\",
       "projectStyle": "PackageReference",

@@ -4,6 +4,12 @@
     <ProjectReference Include="..\BookyBook.Domain\BookyBook.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Data.Books.json" CopyToPublishDirectory="Always" />
+    <None Include="Data.Users.json" CopyToPublishDirectory="Always" />
+    <None Include="Data.Borrowings.json" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

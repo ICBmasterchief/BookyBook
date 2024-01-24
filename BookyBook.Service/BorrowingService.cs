@@ -36,7 +36,6 @@ public class BorrowingService
                     }
                 }
             } else {
-                AnsiConsole.MarkupLine("[red]AAAAAA [/]"+bookService.CheckExistingBookDataById(borrowIdBook).ToString());
                 AnsiConsole.MarkupLine("[yellow]That's not a valid Book ID.[/]");
             }
         }
@@ -77,7 +76,7 @@ public class BorrowingService
         if (borrowingList.Count != 0)
         {
             AnsiConsole.MarkupLine("[yellow]You have the following borrowed books:[/]");
-            CreateBorrowingsTable(borrowingList);
+            CreateBorrowingsTable(borrowingList, true);
             AnsiConsole.Write(BookTable);
             int borrowIdBook = AnsiConsole.Ask<int>("Book ID to return:");
             if (bookService.CheckExistingBookDataById(borrowIdBook))
@@ -124,7 +123,7 @@ public class BorrowingService
         if (borrowing_List.Count != 0)
         {
             AnsiConsole.MarkupLine("[yellow]You have the following borrowed books currently:[/]");
-            CreateBorrowingsTable(borrowing_List);
+            CreateBorrowingsTable(borrowing_List, true);
             AnsiConsole.Write(BookTable);
             AnsiConsole.Prompt(new SelectionPrompt<string>().AddChoices("<-Back to menu"));
         } else {
@@ -138,7 +137,7 @@ public class BorrowingService
         if (borrowing__List.Count != 0)
         {
             AnsiConsole.MarkupLine("[yellow]This is your borrowed books history:[/]");
-            CreateBorrowingsTable(borrowing__List);
+            CreateBorrowingsTable(borrowing__List, false);
             AnsiConsole.Write(BookTable);
             AnsiConsole.Prompt(new SelectionPrompt<string>().AddChoices("<-Back to menu"));
         } else {
@@ -179,11 +178,15 @@ public class BorrowingService
         }
         return list;
     }
-    public void CreateBorrowingsTable(List<Borrowing> borrowingList)
+    public void CreateBorrowingsTable(List<Borrowing> borrowingList, bool isCurrent)
     {
         List<Book> booksBorrowedlist = new();
         BookTable = new ();
-        BookTable.AddColumns("ID", "Title", "Author", "Borrowing Date", "Borrowing End Date", "Returned Date", "Penalty Fee");
+        if (isCurrent){
+            BookTable.AddColumns("ID", "Title", "Author", "Borrowing Date", "Borrowing End Date", "Returned Date");
+        } else {
+            BookTable.AddColumns("ID", "Title", "Author", "Borrowing Date", "Borrowing End Date", "Returned Date", "Penalty Fee");
+        }
         foreach (var borrowing in borrowingList)
         {
             foreach (var book in bookService.bookData.BooksList)
@@ -196,7 +199,11 @@ public class BorrowingService
                     if (borrowing.ReturnedDate.HasValue){
                         returnedDate = borrowing.ReturnedDate.Value.ToString("dd/MM/yyyy");
                     }
-                    BookTable.AddRow(book.IdNumber.ToString(), book.Title, book.Author, borrowingDate, dateToReturn, returnedDate, borrowing.PenaltyFee.ToString()+" $");
+                    if (isCurrent){
+                        BookTable.AddRow(book.IdNumber.ToString(), book.Title, book.Author, borrowingDate, dateToReturn, returnedDate);
+                    } else {
+                        BookTable.AddRow(book.IdNumber.ToString(), book.Title, book.Author, borrowingDate, dateToReturn, returnedDate, borrowing.PenaltyFee.ToString()+" $");
+                    }
                     booksBorrowedlist.Add(book);
                 }
             }

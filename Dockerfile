@@ -10,7 +10,7 @@ WORKDIR /BookyBook
 COPY --from=build /src .
 
 EXPOSE 7790
-VOLUME /BookyBook/SharedForlder
+VOLUME /BookyBook/BookyBook.Data
 
 ENV MACHINE_NAME ${COMPUTERNAME}
 ENTRYPOINT ["dotnet", "BookyBook.Presentation/bin/Release/net6.0/BookyBook.Presentation.dll"]
