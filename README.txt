@@ -9,7 +9,7 @@ INSTRUCCIONES:
             docker pull icbmasterchief/bookybook-app:latest
         
          c. Crear y ejecutar el contenedor de la imagen que acabamos de descargar con el siguiente comando en la terminal:
-            docker run -it -p 7790:7790 -e MACHINE_NAME=Docker bookybook-app
+            docker run -it -p 7790:7790 -e MACHINE_NAME=Docker icbmasterchief/bookybook-app
               
      - DEBUGEANDO LOCALMENTE DESDE EL PROPIO PROYECTO DESCARGADO
          a. Abre la terminal y ve a la carpeta "BookyBook.Presentation" del proyecto.
