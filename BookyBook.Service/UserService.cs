@@ -89,7 +89,6 @@ public class UserService
     }
     public void UpdateLoggedUserPenalty()
     {
-        
         if (userData.UsersList.Find(x => x.IdNumber == LoggedUser.IdNumber) != null)
         {
             userData.UsersList.Find(x => x.IdNumber == LoggedUser.IdNumber).PenaltyFee = LoggedUser.PenaltyFee;

@@ -1,13 +1,20 @@
 ﻿using BookyBook.Domain;
 using System.Text.Json;
+using System.Runtime.InteropServices;
 
 namespace BookyBook.Data;
 public class BookData
 {
     public List<Book>? BooksList = new();
-    private readonly string BookJsonPath = @"..\BookyBook.Data\Data.Books.json";
+    private readonly string BookJsonPath;
     public BookData()
     {
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            BookJsonPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).ToString(), "BookyBook.Data", "Data.Books.json");
+        } else {
+            BookJsonPath = Path.Combine(Directory.GetCurrentDirectory(), "BookyBook.Data", "Data.Books.json");
+        }
         GetRegisteredBooks();
     }
     public void AddBook(Book book)
